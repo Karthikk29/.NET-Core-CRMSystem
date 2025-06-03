@@ -1,95 +1,76 @@
-CRM System – Backend API
-A lightweight Customer Relationship Management (CRM) backend system built using .NET Core Web API and MySQL. It allows you to manage users, leads, contacts, companies, and deals with full CRUD functionality.
+# CRM System – Backend API
 
-🛠 Tech Stack
-Backend: ASP.NET Core Web API (.NET 6/7)
+A lightweight **Customer Relationship Management (CRM)** backend system built using **.NET Core Web API** and **MySQL**. It allows you to manage **users, leads, contacts, companies, and deals** with full CRUD functionality.
 
-Database: MySQL
+---
 
-ORM: Entity Framework Core
+## Tech Stack
 
-Authentication: JWT (JSON Web Tokens)
+- **Backend:** ASP.NET Core Web API (.NET 6/7)  
+- **Database:** MySQL  
+- **ORM:** Entity Framework Core  
+- **Authentication:** JWT (JSON Web Tokens)  
+- **API Testing & Documentation:** Swagger  
 
-API Testing & Docs: Swagger
+---
 
-📦 Dependencies
+## Dependencies
+
 Installed via NuGet:
 
-Microsoft.EntityFrameworkCore
+- `Microsoft.EntityFrameworkCore`  
+- `Microsoft.EntityFrameworkCore.Design`  
+- `Pomelo.EntityFrameworkCore.MySql`  
+- `Microsoft.AspNetCore.Authentication.JwtBearer`  
+- `Swashbuckle.AspNetCore` (for Swagger)  
+- `Microsoft.Extensions.Configuration`  
 
-Microsoft.EntityFrameworkCore.Design
+---
 
-Pomelo.EntityFrameworkCore.MySql
+## How to Run This Project
 
-Microsoft.AspNetCore.Authentication.JwtBearer
+1. **Clone the repository** to your local machine:
 
-Swashbuckle.AspNetCore (for Swagger)
+    ```bash
+    git clone https://github.com/your-username/crm-backend.git
+    cd crm-backend
+    ```
 
-Microsoft.Extensions.Configuration
+2. **Configure MySQL Database**
 
-⚙️ How to Run This Project
-1. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/your-username/crm-backend.git
-cd crm-backend
-2. Configure MySQL Database
-Make sure MySQL is running. Update your appsettings.json with your own DB credentials:
+    Make sure MySQL is running on your system.  
+    Update the connection string in `appsettings.json` with your MySQL server details:
 
-json
-Copy
-Edit
-"ConnectionStrings": {
-  "DefaultConnection": "server=localhost;port=3306;user=root;password=yourpassword;database=crm_db"
-}
-3. Run EF Core Migrations
-Generate and apply the database schema:
+    ```json
+    "ConnectionStrings": {
+      "DefaultConnection": "server=localhost;port=3306;user=root;password=yourpassword;database=crm_db"
+    }
+    ```
 
-bash
-Copy
-Edit
-dotnet ef database update
-If you haven't added the EF CLI:
+3. **Apply EF Core migrations** to create the database schema. If needed, install EF Core CLI tools:
 
-bash
-Copy
-Edit
-dotnet tool install --global dotnet-ef
-4. Run the API Server
-bash
-Copy
-Edit
-dotnet run
-The backend will start (usually on http://localhost:5062).
+    ```bash
+    dotnet tool install --global dotnet-ef
+    dotnet ef database update
+    ```
 
-5. Test APIs via Swagger
-Open your browser and visit:
+4. **Run the API server:**
 
-bash
-Copy
-Edit
-http://localhost:5062/swagger
-You can use Swagger UI to test all endpoints.
+    ```bash
+    dotnet run
+    ```
 
-📁 Project Structure
-graphql
-Copy
-Edit
-CRMSystem/
-├── Controllers/       # API endpoints
-├── Models/            # Entity models (User, Lead, Company, etc.)
-├── Data/              # DB context and migrations
-├── Services/          # JWT service and utilities
-├── Program.cs         # Entry point and middleware config
-├── appsettings.json   # Configuration file
-✅ Features
-JWT-based authentication for secure access
+    By default, it will start on:  
+    `http://localhost:5062`
 
-CRUD operations for all major CRM entities
+5. **Test the API via Swagger UI**
 
-Modular and clean structure using best practices
+    Open your browser and navigate to:  
+    `http://localhost:5062/swagger`  
 
-CORS enabled for frontend integration
+    Use Swagger UI to interactively test all API endpoints.
 
-Swagger UI for real-time API testing
+---
+
+## Project Structure
+
