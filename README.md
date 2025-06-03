@@ -73,4 +73,24 @@ Installed via NuGet:
 ---
 
 ## Project Structure
+Controllers/ # API endpoints for users, leads, contacts, companies, and deals
+Models/ # Data models: User, Lead, Contact, Company, Deal
+Data/ # Database context and migrations
+Services/ # Services like JWT token generation and validation
+Program.cs # Application entry point, middleware & services config
+appsettings.json # Configuration file (DB connection strings, JWT secrets, etc.)
+
+
+---
+
+## Features
+
+- Secure JWT-based authentication for all API requests  
+- CRUD operations for all CRM entities  
+- Clean, modular architecture following best practices  
+- CORS enabled for seamless frontend integration  
+- Swagger UI for convenient API documentation and testing  
+
+---
+
 
